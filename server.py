@@ -1,9 +1,5 @@
 #!/usr/bin/env python
 # coding: utf-8
-
-# In[ ]:
-
-
 import os, sys
 from flask import Flask, request,  Response, render_template
 from srgan import main
