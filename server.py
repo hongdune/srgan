@@ -19,7 +19,7 @@ def index():
 def healthCheck():
    return "", 200
 
-@app.route('/images', methods=['GET','POST'])
+@app.route('/nst_post', methods=['GET','POST'])
 def nst_post():
 	if request.method == 'POST':
 		# Reference Image
