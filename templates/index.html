@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Flask image get</title>
+</head>
+<body>	
+	<br>
+	<h1 align="center">Neural Sytle Transfer</h1>
+	<br>
+	<form align="center" action="/nst_post" method="POST" enctype="multipart/form-data">
+		<h2 align="center">Reference Images</h2>
+		<table align="center">
+			<tr>
+				<td><img class="refer_img" id="refer_img1" src="./images/sample_1.jpg"></td>
+				<td><img class="refer_img" id="refer_img2" src="./images/sample_2.jpg"></td>
+				<td><img class="refer_img" id="refer_img3" src="./images/sample_3.jpg"></td>
+			</tr>
+			<tr>
+				<td><input type="radio" name="refer_img" value="sample_1.jpg"></td>
+				<td><input type="radio" name="refer_img" value="sample_2.JPG"></td>
+				<td><input type="radio" name="refer_img" value="sample_3.jpg"></td>
+			</tr>
+
+		</table>
+		<br><br>
+		<h2 align="center">Target Image</h2>
+		<div align="center" id='view_area'></div>
+		<br>
+		<input type="file" name="user_img" id="user_img" value="userIMgage" onchange="previewImage(this,'view_area')"/>
+		<input type="submit" value="확인"/>
+	</form>
+	<br><br><br>
+
+</body>
+</html>
