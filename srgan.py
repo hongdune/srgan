@@ -27,7 +27,7 @@ def make_img(model, image):
 # In[ ]:
 
 
-def main(target_img_path):
+def path_to_img(target_img_path):
     
     model_file = './models/srgan_G.h5'
     model = tf.keras.models.load_model(model_file)
@@ -41,13 +41,24 @@ def main(target_img_path):
     
     result_path = './static/images/reformed_'+result_img_name + '.jpg'
     fname = result_prefix + '.jpg'
-    reformed_img.save('reformed_'+result_img_name + '.jpg')
     
     
-    return fname
-
+    
+    return reformed_img
 
 # In[ ]:
+
+def img_to_img(img):
+    
+    model_file = './models/srgan_G.h5'
+    model = tf.keras.models.load_model(model_file)
+    img = make_img(model, img)
+    img = Image.fromarray(img)
+    img.save('reformed.jpg')
+    return img
+    
+
+
 
 
 if __name__ == "__main__":
